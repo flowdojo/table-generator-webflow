@@ -11,8 +11,13 @@ interface SheetParameters {
 
 const submitSheet = async ({ sheetData,  } : SheetParameters) : Promise<SheetReturnType>  => 
 {
-    const API_URL : string = `http://localhost:8080/create-table`;
     try {
+        const API_URL : string | undefined = process.env.API_URL;
+        if (!API_URL) {
+            console.error('API URL Missing ');
+            
+            throw new Error("Server Not responding")
+        }
 
         if (!sheetData)
         {
