@@ -36,8 +36,6 @@ const stylesText = `
 const addStylesToNode = () => {
   const stylesWrapper = document.querySelector(".styles-wrapper")!;
 
-
-
   const codeBlock = document.createElement('pre');
   codeBlock.innerText = stylesText;
   stylesWrapper.appendChild(codeBlock)
@@ -109,6 +107,7 @@ const handleSheetSubmission = () : void => {
 
     if (!sheetData) {
       alert("Please Enter Sheet Data")
+      resetGenerateButton()
       return
     }
     const { success, message, responseText } = await submitSheet({ sheetData })

@@ -12,7 +12,7 @@ interface SheetParameters {
 const submitSheet = async ({ sheetData,  } : SheetParameters) : Promise<SheetReturnType>  => 
 {
     try {
-        const API_URL : string | undefined = process.env.API_URL;
+        const API_URL : string | undefined = import.meta.env.VITE_API_URL;
         if (!API_URL) {
             console.error('API URL Missing ');
             
