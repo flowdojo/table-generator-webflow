@@ -13,6 +13,8 @@ const submitSheet = async ({ sheetData,  } : SheetParameters) : Promise<SheetRet
 {
     try {
         const API_URL : string | undefined = import.meta.env.VITE_API_URL;
+        console.log("api url ", API_URL);
+        
         if (!API_URL) {
             console.error('API URL Missing ');
             
