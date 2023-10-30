@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#app {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+
+@media (max-width : 1290px) {
+    #app {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* 
+    BUTTON STYLINGS
+ */
+
+button {
+    background-color: rgb(59, 20, 88) !important;
+    padding: 8px 24px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color: white !important;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: rgb(51, 33, 141) !important;
+}
+
+.generate-btn.loading {
+    cursor: wait;
+}
+
+.generate-btn.loading img {
+    animation: floatAnim 4s ease infinite alternate-reverse;
+}
+
+.generate-btn.loading span {
+    display: none;
+}
+
+.generate-btn.loading span {
+    display: none;
+}
+
+@keyframes floatAnim {
+    0% {
+        transform: translateY(0px);
+    }
+    25% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    75% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+
+}

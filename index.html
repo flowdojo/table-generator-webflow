@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <section id="app" class="pt-10">
+      <h1 class="text-3xl font-semibold text-center">Webflow Table Generator</h1>
+
+      <article class="mt-10">
+        <h3 class="text-lg font-semibold">
+          Step 1 : <span class="font-normal text-base text-gray-800">Copy the Styles below in the head tag of your page in Webflow</span>
+        </h3>
+        <button id="copy-styles" class="mt-2">
+          <span class="inline-block">Copy Styles</span>
+          <img class="inline-block flex object-contain w-4 h-4 mt-0.5" src="/icons/copy-icon.svg" alt="copy styles">
+        </button>
+
+        <!-- The CSS Stylings -->
+        <div class="mt-3 styles-wrapper text-sm border rounded-lg shadow mx-auto pl-5 pr-20 bg-gray-200 hidden">
+            
+        </div>
+      </article>
+
+
+      <h3 class="text-lg mt-5 font-semibold">
+        Step 2 : <span class="font-normal text-base text-gray-800">Paste the Sheet data in the Box below</span>
+      </h3>
+
+      <form id="user-sheet" class="mt-3">
+
+        <textarea contenteditable class="py-2 min-h-[280px] border bg-gray-100 px-3 text-sm outline-none w-full" ></textarea>
+
+        <p class="error-msg hidden"></p>
+        <button type="submit" class="mt-2 generate-btn">
+          <span>Generate Table</span>
+          <img src="/icons/rocket.svg" class="w-5 h-5 object-contain mt-0.5"  alt="generate table">
+        </button>
+      </form>
+
+      <div>
+        <pre id="output" class="h-auto w-full mt-5 border bg-gray-100" >
+        </pre>
+  
+        <button class="copy-table mt-3 hidden" >
+          <span>Copy Table</span>
+          <img class="inline-block flex object-contain w-4 h-4 mt-0.5" src="/icons/copy-icon.svg" alt="copy styles">
+
+        </button>
+      </div>
+
+      
+      
+    </section>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
