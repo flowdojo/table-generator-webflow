@@ -9,7 +9,7 @@ interface SheetParameters {
     
 }
 
-const submitSheet = async ({ sheetData,  } : SheetParameters) : Promise<SheetReturnType>  => 
+const submitSheet = async ({ sheetData } : SheetParameters) : Promise<SheetReturnType>  => 
 {
     try {
         const API_URL : string | undefined = import.meta.env.VITE_API_URL;
@@ -20,13 +20,7 @@ const submitSheet = async ({ sheetData,  } : SheetParameters) : Promise<SheetRet
             throw new Error("Server Not responding")
         }
 
-        if (!sheetData)
-        {
-            return {
-                success : false,
-                message : 'No Input'
-            }
-        }
+        if (!sheetData) throw new Error("No Input received")
 
         const resp : Response = await fetch(API_URL, {
             method: "POST",
@@ -34,7 +28,7 @@ const submitSheet = async ({ sheetData,  } : SheetParameters) : Promise<SheetRet
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                text: sheetData,
+                text: sheetData
             })
         });
 
@@ -47,6 +41,7 @@ const submitSheet = async ({ sheetData,  } : SheetParameters) : Promise<SheetRet
 
         
     } catch (error : any) {
+        console.log("ERRRRR ", error.message);
         
         return {
             success : false,
