@@ -23,14 +23,14 @@ const stylesText = `
     color : #464ab6 !important;
   }
   .flowdojo-custom-table tr td {
-    color : #464ab6;
+    color : #464ab6 !important;
   }
   .flowdojo-custom-table tr:nth-child(odd) {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2 !important;
   }
   
   .flowdojo-custom-table tr:hover {
-    background-color: #ddd;
+    background-color: #ddd !important;
   }
 </style>
   `;
