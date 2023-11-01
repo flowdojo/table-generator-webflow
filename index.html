@@ -5,6 +5,35 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
+    
+<style>
+  .flowdojo-custom-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .flowdojo-custom-table th, .flowdojo-custom-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .flowdojo-custom-table th {
+    background-color: #f2f2f2;
+    color : #464ab6 !important;
+  }
+  .flowdojo-custom-table tr td {
+    color : #464ab6;
+  }
+  .flowdojo-custom-table tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  .flowdojo-custom-table tr:hover {
+    background-color: #ddd;
+  }
+</style>
+  
   </head>
   <body>
     <section id="app" class="pt-10">
@@ -52,7 +81,50 @@
         </button>
       </div>
 
-      
+      <table class="flowdojo-custom-table">
+        <tr>
+            <th>Date</th>
+            <th>Request By</th>
+            <th>Task</th>
+            <th>Time Spent (Hours)</th>
+        </tr>
+        <tr>
+            <td>8th August</td>
+            <td>Vikas</td>
+            <td>Clear Filter Functionality in New Events google.com</td>
+            <td>1 hour</td>
+        </tr>
+        <tr>
+            <td>5th September</td>
+            <td>Vikas</td>
+            <td>Polygon Multiple Table Caching</td>
+            <td>4 Hours</td>
+        </tr>
+        <tr>
+            <td>6th September</td>
+            <td></td>
+            <td>Backend task - Solutions, solution + category</td>
+            <td>4 hours</td>
+        </tr>
+        <tr>
+            <td>7th September</td>
+            <td></td>
+            <td>backend - category and search feature</td>
+            <td>6 hours</td>
+        </tr>
+        <tr>
+            <td>8th september</td>
+            <td></td>
+            <td>backend caching for all the filters + some frontend work</td>
+            <td>5 hours</td>
+        </tr>
+        <tr>
+            <td>11 Sep</td>
+            <td></td>
+            <td>frontend logic change based on new backend</td>
+            <td>5 hours</td>
+        </tr>
+    </table>
       
     </section>
     <script type="module" src="/src/main.ts"></script>

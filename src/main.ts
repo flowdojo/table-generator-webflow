@@ -8,26 +8,29 @@ import "./style.css";
 const stylesText = `
 <style>
   .flowdojo-custom-table {
-      width: 100%;
-      border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
   }
   
   .flowdojo-custom-table th, .flowdojo-custom-table td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
   }
   
   .flowdojo-custom-table th {
-      background-color: #f2f2f2;
+    background-color: #f2f2f2;
+    color : #464ab6 !important;
   }
-  
-  .flowdojo-custom-table tr:nth-child(even) {
-      background-color: #f2f2f2;
+  .flowdojo-custom-table tr td {
+    color : #464ab6;
+  }
+  .flowdojo-custom-table tr:nth-child(odd) {
+    background-color: #f2f2f2;
   }
   
   .flowdojo-custom-table tr:hover {
-      background-color: #ddd;
+    background-color: #ddd;
   }
 </style>
   `;
