@@ -34,6 +34,10 @@ const submitSheet = async ({ sheetData } : SheetParameters) : Promise<SheetRetur
 
         const data = await resp.json()
 
+        console.log("data ", data);
+        
+        if (!data.success) throw new Error(data.error)
+        
         return {
             success : data?.success,
             responseText : data.responseText

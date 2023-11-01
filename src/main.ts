@@ -114,8 +114,7 @@ const handleSheetSubmission = () : void => {
     
     if (!success) 
     {
-      if (message === "No Input")
-      {
+      if (message === "No Input") {
         alert("Please Enter Sheet Data")
       } else {
         message && setErrorMessage(message)
