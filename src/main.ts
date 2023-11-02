@@ -1,6 +1,6 @@
 import { removeLoadingFromButton, resetGenerateButton, setLoadingButton } from "./helpers/buttons";
 import { setErrorMessage, setResponse } from "./helpers/setters";
-import { show } from "./helpers/showAndHide";
+import { hide, show } from "./helpers/showAndHide";
 import submitSheet from "./helpers/submitSheet";
 import "./style.css";
 
@@ -25,15 +25,28 @@ const stylesText = `
   .flowdojo-custom-table tr td {
     color : #464ab6 !important;
   }
-  .flowdojo-custom-table tr:nth-child(odd) {
+  .flowdojo-custom-table:not(:has(thead)) tr:nth-child(odd) {
     background-color: #f2f2f2 !important;
+    transition : background-color 0.3s ease;
+  }
+
+  .flowdojo-custom-table:has(thead) tr:nth-child(odd) {
+    background-color: transparent !important;
+    transition : background-color 0.3s ease;
+  }
+
+  .flowdojo-custom-table:has(thead) tr:nth-child(even) {
+    background-color: #f2f2f2 !important;
+    transition : background-color 0.3s ease;
   }
   
-  .flowdojo-custom-table tr:hover {
+  .flowdojo-custom-table:has(thead) tr:hover,
+  .flowdojo-custom-table:not(:has(thead)) tr:hover
+  {
     background-color: #ddd !important;
   }
 </style>
-  `;
+`;
 
 
 const addStylesToNode = () => {
@@ -82,11 +95,7 @@ const copyStylesClickListener = () =>
           copyStylesBtn.disabled = false
         },5000)
     }
-
-    
-    
   }
-
 
   copyStylesBtn?.addEventListener('click', copyStyles)
 }
@@ -103,6 +112,8 @@ const handleSheetSubmission = () : void => {
 
     clearInterval(id)
     e.preventDefault()
+
+    hide(document.getElementById("output-wrapper")!)
     const sheetNode = document.querySelector('#user-sheet textarea') as HTMLInputElement;
     const sheetData : string = sheetNode.value;
 
@@ -130,10 +141,10 @@ const handleSheetSubmission = () : void => {
       if (responseText) 
       {
         setResponse(responseText)
-        show(document.querySelector('.copy-table')!)
+        show(document.getElementById('output-wrapper')!)
         /** Scroll down */
         window.scrollBy({
-          top : 200,
+          top : 400,
           behavior : "smooth"
         })
       }
